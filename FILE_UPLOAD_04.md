@@ -43,7 +43,7 @@ Tác dụng của hàm `explode()` là để tách các phần trong một chu�
 
 ## Vấn đề
 
-Ở đây có 1 vấn đề, thứ nhất thật ra kết quả trả về từ hàm `session_id()` là một untrust data được kiểm soát bởi client. 
+Ở đây có 1 vấn đề, thật ra kết quả trả về từ hàm `session_id()` là một untrust data được kiểm soát bởi client. 
 ![](https://i.imgur.com/CgHjF3L.png)
 
 Hàm `session_id()` sẽ trả về kết quả dựa trên giá trị của cookie `PHPSESSID`, trong trường hợp này là `dfacd091c5443055c3ae34525887ce95`. Nếu user thay đổi giá trị này thành `chanh` thì đường dẫn upload bây giờ sẽ thành `upload/chanh`, vậy nếu giá trị bị thay đổi thành `../` thì đường dẫn upload sẽ là: `upload/../`:
